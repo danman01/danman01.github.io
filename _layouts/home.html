@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  
+  {{ content }}
+
+  <div><h1>Latest Post</h1>
+    {% assign latest = site.posts.first %}
+    <h2>{{ latest.title }}</h2>
+    <p>{{ latest.date | date: "%b %d, %Y" }}</p>
+    <div>
+      <div>
+        {{ latest.excerpt }}
+      </div>
+      <p>
+      <a href="{{ latest.url }}">More...</a>
+      </p>
+    </div>
+  </div>
+
+  <h1 class="page-heading">All Posts</h1>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% assign currentdate = post.date | date: "%B %Y" %}
+      {% if currentdate != date %}
+        {% unless forloop.first %}</ul>{% endunless %}
+        <h1 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h1>
+        <ul>
+        {% assign date = currentdate %}
+      {% endif %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
+
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>

@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+This site is built using Jekyll, a blogging platform for people who like to torture themselves. Learn more about Jekyll here: [jekyllrb.com](http://jekyllrb.com/). Learn more about the author at this sometimes-up-to-date [about.me page](https://about.me/dannykirschner)
 
 You can find the source code for the Jekyll new theme at:
 {% include icon-github.html username="jekyll" %} /
