@@ -7,12 +7,13 @@ categories:
 tags: 
 ---
 
-## Asynchronous Programming in JavaScript
-- or async in js for short
-
-skill level: beginner -> advanced
+or async in js for short
 
 ### What is it?
+
+![](https://miro.medium.com/max/1220/1*lFtbB3bq_e7yvhrkakUTEQ.jpeg)
+
+
 TLDR; A coding style where you have chunks of code that do not block execution of other chunks of code. Async code runs later, allowing other code to happen now.
 Or in plain English: Let's say you are making breakfast. You want to have toast with avocado and coffee with warmed oat milk, because you work hard dammit. You do the following steps:
 
@@ -30,7 +31,9 @@ Or in plain English: Let's say you are making breakfast. You want to have toast 
 
 Can you pick out the items that are synchronous vs asynchronous? You are the worker. You have to manually do many of the above steps. But sometimes you get to hand off work to someone (thing) else. When that side job is complete, it alerts you, and you then take their finished product back into your breakfast production line.
 
-robots helping us - more: https://cheezburger.com/9949957/this-woman-makes-hilarious-shtty-robots-8-gifs
+![](https://miro.medium.com/max/960/1*QR2DOqIErCkdIKKMPL6MlA.gif)
+{:.image-caption}
+*robots helping us - [more](https://cheezburger.com/9949957/this-woman-makes-hilarious-shtty-robots-8-gifs)*
 
 The same is true for writing code in JavaScript. We can at times choose to hand off code to something else, let's say an HTTP request to an API, while the rest of our program continues to run. When the results are ready from the API and the response is handed back to our program, we handle it at that moment, and then continue running any remaining parts of our program. Nothing is blocked. Breakfast is served without a hitch.
 
@@ -188,3 +191,5 @@ Incorrect (not-well understood ) order of execution of code. Again, add breakpoi
 **Q**. I read all the way to the end. Now what? 
 **A**. Bless you. Here's a "DAD JOKE" to use in your next conference call while waiting for everyone to join:
 "What do you call a bundle of hay in a church? Christian Bale."
+
+_Originally posted on [medium](https://best-username.medium.com/asynchronous-programming-in-javascript-84b11fc637f1) on 12-30-2020_
