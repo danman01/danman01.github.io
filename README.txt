@@ -1,4 +1,9 @@
-how to write:
+## how to install:
+ensure dependencies installed on system [official docs](https://jekyllrb.com/docs/):
+bundle
+
+
+## how to write:
 
 rake new_draft['title of draft']
 

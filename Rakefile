@@ -6,21 +6,19 @@ require "uri"
 posts_dir       = "_posts"
 drafts_dir       = "_drafts"
 
-new_post_ext    = "markdown"
 
-# usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
-desc "Begin a new post in #{posts_dir}"
-task :new_post, :title do |t, args|
+def _build_post(dir, t, args)
   if args.title
     title = args.title
   else
     title = gets("Enter a title for your post: ")
   end
   escaped_title = title.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-  raise "### You haven't set anything up yet. First create a _posts directory." unless File.directory?(posts_dir)
+  raise "### You haven't set anything up yet. First create a #{dir} directory." unless File.directory?(dir)
   # creates directory, and all parent directories
   #mkdir_p "#{source_dir}/#{posts_dir}"
-  filename = "#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{escaped_title}.#{new_post_ext}"
+  post_ext    = "markdown"
+  filename = "#{dir}/#{Time.now.strftime('%Y-%m-%d')}-#{escaped_title}.#{post_ext}"
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
@@ -35,6 +33,12 @@ task :new_post, :title do |t, args|
     post.puts "tags: "
     post.puts "---"
   end
+end
+
+# usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
+desc "Begin a new post in #{posts_dir}"
+task :new_post, :title do |t, args|
+  _build_post(posts_dir, t, args)
 end
 
 desc "Begin a new draft in #{drafts_dir}"
